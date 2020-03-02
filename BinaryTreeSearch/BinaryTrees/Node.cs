@@ -13,13 +13,11 @@ namespace BinaryTreeSearch.BinaryTree
         public int data;
         public Node left;
         public Node right;
-        public bool isLeaf;
         //constructor
-        public Node(string key, int data, bool isLeaf)
+        public Node(string key, int data)
         {
             this.key = key;
             this.data = data;
-            this.isLeaf = isLeaf;
         }
         //member methods
         

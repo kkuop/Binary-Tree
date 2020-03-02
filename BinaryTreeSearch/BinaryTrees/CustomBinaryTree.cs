@@ -10,7 +10,6 @@ namespace BinaryTreeSearch
     class CustomBinaryTree
     {
         //member vars
-        Node node;
         private Node root;
         //constructor
         public CustomBinaryTree()
@@ -39,7 +38,7 @@ namespace BinaryTreeSearch
             }
             return null;
         }
-        public void Add(Node node, Node temporaryNode)
+        public void Add(Node node, ref Node temporaryNode)
         {
             if (temporaryNode == null)
             {
@@ -53,12 +52,32 @@ namespace BinaryTreeSearch
                 }
                 if(Comparer<string>.Default.Compare(node.key, temporaryNode.key) < 0)
                 {
-                    Add(node, temporaryNode.left);
+                    Add(node, ref temporaryNode.left);
                 }
                 else
                 {
-                    Add(node, temporaryNode.right);
+                    Add(node, ref temporaryNode.right);
                 }
+            }
+        }
+        public Node Insert(string key, int age)
+        {
+            Node node = new Node(key, age);
+            try
+            {
+                if (root == null)
+                {
+                    root = node;
+                }
+                else
+                {
+                    Add(node, ref root);
+                }
+                return node;
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
     }
