@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinaryTreeSearch.BinaryTree
 {
-    class Node
+    public class Node
     {
         //member vars
         public string key;
@@ -15,12 +15,10 @@ namespace BinaryTreeSearch.BinaryTree
         public Node right;
         public bool isLeaf;
         //constructor
-        public Node(string key, int data, Node left, Node right, bool isLeaf)
+        public Node(string key, int data, bool isLeaf)
         {
             this.key = key;
             this.data = data;
-            this.left = left;
-            this.right = right;
             this.isLeaf = isLeaf;
         }
         //member methods
